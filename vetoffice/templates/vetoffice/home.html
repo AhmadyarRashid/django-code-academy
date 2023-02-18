@@ -13,7 +13,10 @@
     {% else %}
         <p>The animal is not a dog or cat.</p>
     {% endif %}
+
     {% for pet in pets %}
         <p>{{ pet.petname }}: {{ pet.animal_type }}</p>
     {% endfor %}
+
+    <a href="{% url 'home' %}">Vet Office</a>
 {% endblock %}
