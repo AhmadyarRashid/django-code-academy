@@ -4,7 +4,13 @@
 <link rel="stylesheet" href="{% static 'vetoffice/style.css' %}">
 {% endblock %}
 
-
 {% block content %}
-<p>Welcome!</p>
+<p>Welcome, {{ name }}</p>
+    {% if pet.animal_type == "Dog" %}
+        <p>The animal is a dog.</p>
+    {% elif pet.animal_type == "Cat" %}
+        <p>The animal is a cat.</p>
+    {% else %}
+        <p>The animal is not a dog or cat.</p>
+    {% endif %}
 {% endblock %}
