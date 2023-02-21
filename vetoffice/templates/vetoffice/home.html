@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-<p>Welcome, {{ name }}</p>
+<p>Welcome, {{ name | lower }}</p>
     {% if pet.animal_type == "Dog" %}
         <p>The animal is a dog.</p>
     {% elif pet.animal_type == "Cat" %}
@@ -14,7 +14,7 @@
         <p>The animal is not a dog or cat.</p>
     {% endif %}
 
-    {% for pet in pets %}
+    {% for pet in pets|dictsort:"petname" %}
         <p>{{ pet.petname }}: {{ pet.animal_type }}</p>
     {% endfor %}
 {% endblock %}
