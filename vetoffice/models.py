@@ -8,6 +8,8 @@ class Owner(models.Model):
 
     def __str__(self):
         return self.first_name + ' ' + self.last_name
+    def has_multiple_pets(self):
+        return self.patient_set.count() > 1    
 
 class Patient(models.Model):
     DOG = 'DO'
