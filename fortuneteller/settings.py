@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'randomfortune.apps.RandomfortuneConfig',
-    'vetoffice.apps.VetofficeConfig'
+    'vetoffice.apps.VetofficeConfig',
+    'BikeRentalApp.apps.BikerentalappConfig'
 ] 
 
 MIDDLEWARE = [
