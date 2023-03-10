@@ -53,3 +53,22 @@ class DeleteStationView(DeleteView):
   model = Station
   template_name = "routes/delete_station.html"
   success_url = "/stations/"
+
+class StopsView(ListView):
+  model = Stop
+  template_name = "routes/stops.html"
+
+class CreateStopView(CreateView):
+  model = Stop
+  form_class = StationForm
+  template_name = "routes/add_stop.html"
+
+class UpdateStopView(UpdateView):
+  model = Stop
+  form_class = StopForm
+  template_name = "routes/update_stop.html"
+
+class DeleteStopView(DeleteView):
+  model = Stop
+  template_name = "routes/delete_stop.html"
+  success_url = "/stops/"
