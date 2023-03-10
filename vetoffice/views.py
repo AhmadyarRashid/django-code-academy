@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Owner, Patient
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.http import Http404
 
 pets = [
   { "petname": "Fido", "animal_type": "dog"},
@@ -12,6 +13,10 @@ pets = [
 
 # Create your views here.
 def home(request):
+    try:
+        found_pet = Patient.objects.get(pk=4)
+    except Patient.DoesNotExist:
+        raise Http404()
     context = {"name": "Djangoer", "pets": pets}
     return render(request, 'vetoffice/home.html', context)
 
