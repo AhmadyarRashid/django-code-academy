@@ -60,7 +60,7 @@ class StopsView(ListView):
 
 class CreateStopView(CreateView):
   model = Stop
-  form_class = StationForm
+  form_class = StopForm
   template_name = "routes/add_stop.html"
 
 class UpdateStopView(UpdateView):
