@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'randomfortune.apps.RandomfortuneConfig',
     'vetoffice.apps.VetofficeConfig',
-    'BikeRentalApp.apps.BikerentalappConfig'
+    'BikeRentalApp.apps.BikerentalappConfig',
+    'routes.app.RoutesConfig'
 ] 
 
 MIDDLEWARE = [
