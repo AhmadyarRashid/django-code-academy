@@ -22,11 +22,13 @@ def home(request):
     context = {"name": "Djangoer", "pets": pets}
     return render(request, 'vetoffice/home.html', context)
 
+# STEP 1
 # class OwnerCreate(CreateView):
 #     model = Owner
 #     template_name = "vetoffice/owner_create_form.html"
 #     fields = ["first_name", "last_name", "phone"]
 
+# STEP 1
 def OwnerCreate(request):
     if request.method == "POST":
         form = OwnerCreateForm(request.POST)
@@ -34,7 +36,18 @@ def OwnerCreate(request):
             form.same()
     else:
         form = OwnerCreateForm()
-    return render(request, "vetoffice/owner_create_form.html", {"form":form})        
+    return render(request, "vetoffice/owner_create_form.html", {"form":form})     
+ 
+#  STEP 3
+# def OwnerCreate(request):
+#   if request.method == "POST":
+#     newOwner = Owner()
+#     newOwner.first_name = request.POST['first_name']
+#     newOwner.last_name = request.POST['last_name']
+#     newOwner.phone_number = request.POST['phone_number']
+#     newOwner.save()
+
+#   return render(request, "vetoffice/owner_create_form.html")   
 
 class OwnerUpdate(UpdateView):
     model = Owner
