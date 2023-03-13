@@ -6,6 +6,8 @@ class Owner(models.Model):
     last_name = models.CharField(max_length=30)
     phone = models.CharField(max_length=30)
 
+    def get_absolute_url(self):
+        return "list"
     def __str__(self):
         return self.first_name + ' ' + self.last_name
     def has_multiple_pets(self):

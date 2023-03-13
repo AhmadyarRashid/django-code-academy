@@ -27,6 +27,8 @@ def home(request):
 #     model = Owner
 #     template_name = "vetoffice/owner_create_form.html"
 #     fields = ["first_name", "last_name", "phone"]
+#     OR
+#     form_class = OwnerCreateForm
 
 # STEP 1
 def OwnerCreate(request):
@@ -37,7 +39,7 @@ def OwnerCreate(request):
     else:
         form = OwnerCreateForm()
     return render(request, "vetoffice/owner_create_form.html", {"form":form})     
- 
+
 #  STEP 3
 # def OwnerCreate(request):
 #   if request.method == "POST":
