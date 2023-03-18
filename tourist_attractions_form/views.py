@@ -17,9 +17,9 @@ def details(request, statename):
 class StateCreate(CreateView):
     model = State
     form_class = StateCreateForm
-    template_name = ""
+    template_name = "tourist_attractions/state_create_form.html"
 
 class AttractionCreate(CreateView):
     model = Attraction
     form_class = AttractionCreateForm
-    template_name = ""
+    template_name = "tourist_attractions/attraction_create_form.html"
