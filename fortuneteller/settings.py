@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'randomfortune.apps.RandomfortuneConfig',
     'vetoffice.apps.VetofficeConfig',
     'BikeRentalApp.apps.BikerentalappConfig',
-    'routes.apps.RoutesConfig'
+    'routes.apps.RoutesConfig',
+    'tourist_attractions_form.apps.TouristAttractionsFormConfig'
 ] 
 
 MIDDLEWARE = [
