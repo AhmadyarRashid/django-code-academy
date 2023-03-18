@@ -8,10 +8,17 @@ class State(models.Model):
     def __str__(self):
         return '{}'.format(self.stateName)
     
+    def get_absolute_url(self):
+        return '/tourist_attractions/'
+    
+    
 class Attraction(models.Model):
     homeState = models.ForeignKey(State, on_delete=models.CASCADE, verbose_name="Home State")
     attractionName = models.CharField(max_length=200, verbose_name="Attraction Name")
 
     def __str__(self):
         return '{}'.format(self.attractionName)
+    
+    def get_absolute_url(self):
+        return '/tourist_attractions/'
     

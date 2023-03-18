@@ -19,7 +19,9 @@
       <td>{{ item.attractionName }}</td>
       <td>{{ item.homeState }}</td>
       <td><a href="{% url 'details' item.homeState|slugify %}">State Details</a></td>
-      </tr>
-      {% endfor %}
+    </tr>
+    {% endfor %}
+    <a href="{% url 'statecreate' %}">Add a state</a><br/>
+    <a href="{% url 'attractioncreate'%}">Add an attraction</a>
   </table>
 {% endblock %}
