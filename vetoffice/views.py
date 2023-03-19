@@ -3,6 +3,8 @@ from .models import Owner, Patient
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.http import Http404
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .forms import OwnerCreateForm
 
@@ -14,6 +16,7 @@ pets = [
 ]
 
 # Create your views here.
+@login_required
 def home(request):
     # try:
     #     found_pet = Patient.objects.get(pk=4)
@@ -31,6 +34,7 @@ def home(request):
 #     form_class = OwnerCreateForm
 
 # STEP 1
+@login_required
 def OwnerCreate(request):
     if request.method == "POST":
         form = OwnerCreateForm(request.POST)
@@ -51,33 +55,33 @@ def OwnerCreate(request):
 
 #   return render(request, "vetoffice/owner_create_form.html")   
 
-class OwnerUpdate(UpdateView):
+class OwnerUpdate(LoginRequiredMixin, UpdateView):
     model = Owner
     template_name = "vetoffice/owner_update_form.html"
     fields = ["first_name", "last_name", "phone"]
 
-class OwnerList(ListView):
+class OwnerList(LoginRequiredMixin, ListView):
     model = Owner
     template_name = "vetoffice/owner_list.html"
 
-class OwnerDelete(DeleteView):
+class OwnerDelete(LoginRequiredMixin, DeleteView):
     model = Owner
     template_name = "vetoffice/owner_delete_form.html"
 
-class PatientCreate(CreateView):
+class PatientCreate(LoginRequiredMixin, CreateView):
     model = Patient
     template_name = "vetoffice/patient_create_form.html"
     fields = ["animal_type", "breed", "pet_name", "age", "owner"]
 
-class PatientUpdate(UpdateView):
+class PatientUpdate(LoginRequiredMixin, UpdateView):
     model = Patient
     template_name = "vetoffice/patient_update_form.html"
     fields = ["animal_type", "breed", "pet_name", "age", "owner"]
 
-class PatientList(ListView):
+class PatientList(LoginRequiredMixin, ListView):
     model = Patient
     template_name = "vetoffice/patient_list.html"
 
-class PatientDelete(DeleteView):
+class PatientDelete(LoginRequiredMixin, DeleteView):
     model = Patient
     template_name = "vetoffice/patient_delete_form.html"
