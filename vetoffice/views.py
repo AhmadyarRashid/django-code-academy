@@ -1,10 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Owner, Patient
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.http import Http404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth import logout
 
 from .forms import OwnerCreateForm
 
@@ -14,6 +15,10 @@ pets = [
   { "petname": "Cleo", "animal_type": "cat"},
   { "petname": "Oreo", "animal_type": "dog"},
 ]
+
+def logout_view(request):
+    logout(request)
+    return redirect("home")
 
 # Create your views here.
 @login_required
