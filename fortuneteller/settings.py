@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'vetoffice.apps.VetofficeConfig',
     'BikeRentalApp.apps.BikerentalappConfig',
     'routes.apps.RoutesConfig',
-    'tourist_attractions_form.apps.TouristAttractionsFormConfig'
+    'tourist_attractions_form.apps.TouristAttractionsFormConfig',
+    'weeklydessert_auth.apps.WeeklydessertAuthConfig'
 ] 
 
 MIDDLEWARE = [

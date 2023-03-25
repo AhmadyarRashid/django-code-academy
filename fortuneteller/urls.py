@@ -21,5 +21,6 @@ urlpatterns = [
     path('fortune/', include('randomfortune.urls')),
     path('vetoffice/', include('vetoffice.urls')),
     path('routes/', include('routes.urls')),
-    path('tourist_attractions/', include('tourist_attractions_form.urls'))
+    path('tourist_attractions/', include('tourist_attractions_form.urls')),
+    path('', include('weeklydessert_auth.urls'))
 ]
